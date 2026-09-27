@@ -1,0 +1,28 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# requirements.txt
+# Install everything with:  pip install -r requirements.txt
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Core web framework — FastAPI handles HTTP routes AND WebSockets out of the box
+fastapi>=0.111.0
+
+# ASGI server — runs the FastAPI app; "standard" extras include websockets & httptools
+uvicorn[standard]>=0.29.0
+
+# SQLAlchemy ORM — the async version lets us do DB queries without blocking the event loop
+sqlalchemy[asyncio]>=2.0.30
+
+# Async driver for SQLite — zero-install local DB, great for learning & dev
+aiosqlite>=0.20.0
+
+# Async driver for PostgreSQL — swap DATABASE_URL in .env to use it in production
+asyncpg>=0.29.0
+
+# Pydantic v2 — data validation & serialization for request/response schemas
+pydantic>=2.7.0
+
+# Reads .env files and injects them into pydantic settings
+pydantic-settings>=2.2.0
+
+# Standard Python JSON support is built-in, but this makes datetime serialization easier
+python-multipart>=0.0.9   # needed for file uploads if you extend the API later
